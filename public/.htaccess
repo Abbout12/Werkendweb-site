@@ -1,0 +1,64 @@
+# ============================================================
+# WerkendWeb — Security Headers
+# Alleen van toepassing op Apache-hosting
+# Voor Netlify: zie public/_headers
+# Voor Vercel/Node.js: zie server/server.js (Helmet)
+# ============================================================
+
+<IfModule mod_headers.c>
+
+  # Prevent clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Prevent MIME-type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Referrer policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Permissions policy — disable features not used on this site
+  Header always set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+
+  # HSTS — force HTTPS for 1 year (alleen activeren als HTTPS bevestigd werkt)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  # Content Security Policy
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; form-action 'self' https://formspree.io; base-uri 'self';"
+
+  # XSS Protection (legacy browsers)
+  Header always set X-XSS-Protection "1; mode=block"
+
+</IfModule>
+
+# ============================================================
+# Force HTTPS redirect
+# ============================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ============================================================
+# Disable directory listing
+# ============================================================
+Options -Indexes
+
+# ============================================================
+# Hide server information
+# ============================================================
+ServerSignature Off
+
+# ============================================================
+# Protect sensitive files
+# ============================================================
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(htpasswd|ini|log|sh|sql|bak|config)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>

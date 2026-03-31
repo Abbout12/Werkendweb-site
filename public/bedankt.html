@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Aanvraag ontvangen — WerkendWeb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .bedankt-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 6vw 80px;
+  }
+  .bedankt-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 60px 52px;
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+  }
+  .bedankt-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(200,80,42,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    font-size: 1.5rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .bedankt-card h1 {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .bedankt-card p {
+    font-size: 0.97rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 36px;
+  }
+  @media (max-width: 600px) {
+    .bedankt-card { padding: 40px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Werkend<span>Web</span></a>
+  <div class="nav-links">
+    <a href="/#oplossing" class="nav-link">Aanpak</a>
+    <a href="/#prijzen" class="nav-link">Prijzen</a>
+    <a href="/#contact-formulier" class="nav-link">Contact</a>
+  </div>
+  <a href="/#contact-formulier" class="nav-cta">Start jouw website</a>
+</nav>
+
+<section class="bedankt-section">
+  <div class="bedankt-card">
+    <div class="bedankt-icon">&#10003;</div>
+    <h1>Aanvraag ontvangen</h1>
+    <p>Bedankt voor uw bericht. Ik neem binnen &eacute;&eacute;n werkdag contact met u op om uw wensen te bespreken.</p>
+    <a href="/" class="btn-primary">Terug naar de website &rarr;</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Werkend<span>Web</span></div>
+  <div>&copy; 2025 WerkendWeb &mdash; Websites die werken voor uw bedrijf</div>
+  <div>
+    <a href="#">Privacybeleid</a>&nbsp;&middot;&nbsp;
+    <a href="#">KVK: 12345678</a>
+  </div>
+</footer>
+
+</body>
+</html>
