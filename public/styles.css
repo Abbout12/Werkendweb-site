@@ -310,7 +310,7 @@ nav {
   line-height: 1.08;
   letter-spacing: -0.03em;
   margin-bottom: 24px;
-  max-width: 12ch;
+  max-width: 15ch;
 }
 .hero h1 em { font-style: italic;
   color: var(--accent);
