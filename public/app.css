@@ -50,6 +50,24 @@
   background: #f0f0f0;
 }
 
+/* Honeypot field (hidden) */
+[name="_gotcha"] {
+  display: none;
+}
+
+.honeypot-wrapper {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Review avatars (dynamic colors via CSS custom properties) */
+.review-avatar[style*="--avatar-bg"] {
+  background-color: var(--avatar-bg);
+}
+
 @media (max-width: 680px) {
   .cookie-banner {
     padding: 12px 16px;
