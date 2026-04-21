@@ -1043,15 +1043,24 @@ footer a:hover { color: rgba(247,244,239,0.65); }
 
 /* ── RESPONSIVE — Mobiel (≤600px) ──────────────────────────────────────────── */
 @media (max-width: 600px) {
-  .hero                { padding: 80px 5vw 56px; gap: 32px; }
+  main                 { display: flex; flex-direction: column; }
+  .hero                { padding: 80px 5vw 56px; gap: 32px; order: 1; }
   .hero h1             { font-size: 2.1rem; }
   .hero-sub            { font-size: 0.97rem; }
   section              { padding: 64px 5vw; }
-  .form-row            { grid-template-columns: 1fr; gap: 0; }
-  .contact-form        { padding: 28px 20px; }
+  .herkenning          { order: 2; } /* Pijnpunten: "herken je dit?" */
+  .prijzen             { order: 3; } /* PRIJZEN DIRECT HIERNA (conversie!) */
+  .oplossing           { order: 4; } /* Dan: hoe we het aanpakken */
+  .werk-section        { order: 5; } /* Portfolio als proof */
+  .reviews-section     { order: 6; } /* Social proof */
+  .werkwijze           { order: 7; } /* Reassurance: proces */
+  .waarom              { order: 8; } /* Waarom wij */
+  .cta-strip           { order: 9; }
+  .faq-section         { order: 10; } /* Objecties beantwoorden */
+  .contact-section     { order: 11; } /* Contact form */
+  .cta-section         { order: 12; } /* Final CTA */
   .waarom-card-main    { padding: 28px 24px; }
   .pricing-grid        { max-width: 100%; }
-  .cta-section         { padding: 80px 5vw; }
   footer               { padding: 22px 5vw; }
 }
 

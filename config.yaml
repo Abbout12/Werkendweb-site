@@ -6,7 +6,7 @@ models:
   - name: Gemma 4
     provider: ollama
     model: gemma4
-    context_length: 32768
+    context_length: 131072
     roles:
       - chat
       - edit
